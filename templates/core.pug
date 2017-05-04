@@ -1,0 +1,15 @@
+mixin operation(info)
+    div #{info.summary}
+    div #{info.description}
+    div Parameters
+        ul
+            each item in info.parameters
+                li #{item.name}
+
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        block title
+    body
+        block body

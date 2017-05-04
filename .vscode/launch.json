@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceRoot}/index.js",
-            "args": ["http://build-squid.eng.vmware.com/build/mts/release/bora-5474991/publish/apis/sx-swagger.json", "-p", "~/Documents"]
+            "args": ["http://petstore.swagger.io/v2/swagger.json", "-p", "./output"]
         },
         {
             "type": "node",

@@ -1,0 +1,6 @@
+extends core
+
+block body
+    h1 #{method}
+    if info["get"]
+        +operation(info["get"])

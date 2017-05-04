@@ -1,0 +1,11 @@
+extends core
+
+block body
+    h1 #{info.title}
+    div #{info.version}
+    div #{info.description}
+    each item in tags
+        li 
+            a(href=item.name + '/index.html') item.name
+        
+    
