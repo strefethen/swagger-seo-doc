@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 var request = require('superagent');
-var co = require('co');
-var prompt = require('co-prompt');
 var program = require('commander');
 const pug = require('pug');
 const fs = require('fs');
