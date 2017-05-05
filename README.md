@@ -1,6 +1,8 @@
 # swagger-seo-doc
 
-A tool to generate a proto-type, SEO friendly, static documentation site for a swagger.json file. Uses [pug](https://pugjs.org/api/getting-started.html) for templates.
+A tool to generate a proto-type, SEO friendly, static documentation site for a swagger.json file. Uses [pug](https://pugjs.org/api/getting-started.html) for templates and is based on [Bootstrap](https://getbootstrap.com/).
+
+**Note:**  This is *by no means* complete. I wrote it to illustrate some simple concepts and facilitate further discussion regarding swagger documenation and there are many SEO concepts missing but the file structure is meaningful as a starting point. Additionally, there are lots of pieces of swagger that are not covered here. You've been warned.
 
 Kudos to Atlassian blog post on [building node cli's](https://developer.atlassian.com/blog/2015/11/scripting-with-node/).
 
