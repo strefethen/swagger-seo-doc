@@ -1,6 +1,11 @@
-extends core
+extends swaggerbase
 
-block body
-    h1 #{method}
-    if info["get"]
-        +operation(info["get"])
+block content
+    h1 #{parent}/#{method}
+
+    each verb in Object.keys(info)
+        +operationHeader(verb, info[verb])
+        +operationParameters(info[verb].parameters)
+        +operationResponses(info[verb].responses)
+
+    a(href='index.html') Back

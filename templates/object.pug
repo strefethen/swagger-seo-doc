@@ -1,14 +1,16 @@
-extends core
+extends swaggerbase
 
-block body
+block content
     h1 #{object}
-    if info["post"]
-        div #{summary}
-        div Parameters
-            ul
-                each item in info["post"].parameters
-                    li #{item.name}
+
+    h3 Verbs
+    each verb in Object.keys(info)
+        if verb != 'methods'
+            +operationHeader(verb, info[verb])
+            +operationParameters(info[verb].parameters)
+            +operationResponses(info[verb].responses)
+
+    +operationMethods(info.methods)
+
     a(href='../index.html') Back
-    if info
-        div #{info.get}
     
