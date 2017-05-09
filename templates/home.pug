@@ -1,5 +1,18 @@
 extends swaggerbase
 
+block headstyle
+    style.
+        .item-wrapper {
+            float:left;
+            width: 100%;
+        }
+
+        .item {
+            width:200px;
+            margin:4px;
+            display: inline-block;
+        }
+
 block masthead
     <!-- Main jumbotron for a primary marketing message or call to action -->
     div(class="jumbotron")
@@ -8,16 +21,18 @@ block masthead
             p #{swagger.info.version} #{swagger.info.description}
             p 
                 a(class="btn btn-primary btn-lg" href="#" role="button") Learn more &raquo;
+    div(style='clear: both')                
 
 block content
-    h1 Objects
-    div 
+    h1 API Objects
+    div(class='item-wrapper')
         each item in Object.keys(objects)
-            li 
+            div(class='item')
                 a(href=item + '/index.html') #{item}
-        
-    h2 Definitions
-    div
+    p &nbsp;
+    h2 Type Definitions
+    div(class='item-wrapper')
         each definition in Object.keys(swagger.definitions)
-            li
+            div(class='item')
                 a(href='definitions/' + definition + '.html') #{definition}
+    div(style='clear: both')
