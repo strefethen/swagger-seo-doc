@@ -20,8 +20,6 @@ block masthead
             h1 #{swagger.info.title}
             p #{swagger.info.description}
             p Version: #{swagger.info.version}
-            p 
-                a(class="btn btn-primary btn-lg" href="#" role="button") Learn more &raquo;
     div(style='clear: both')                
 
 block content
@@ -31,6 +29,7 @@ block content
             div(class='item')
                 a(href=item + '/index.html') #{item}
     p &nbsp;
+    hr
     h2 Type Definitions
     div(class='item-wrapper')
         each definition in Object.keys(swagger.definitions)
