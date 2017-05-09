@@ -45,10 +45,11 @@ mixin operationResponses(responses)
 mixin operationMethods(methods)
     if methods
         h4 Methods
-        ul
+        div(class='item-wrapper')
             each verb in Object.keys(methods)
-                li                         
+                div(class='item')                         
                     a(href=verb + '.html') #{verb}
+        div(style='clear: both')
 
 mixin definitionProperties(properties)
     if properties

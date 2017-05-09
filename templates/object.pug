@@ -1,5 +1,18 @@
 extends swaggerbase
 
+block headstyle
+    style.
+        .item-wrapper {
+            float:left;
+            width: 100%;
+        }
+
+        .item {
+            width:200px;
+            margin:4px;
+            display: inline-block;
+        }
+
 block content
     h1 #{object}
 
@@ -11,6 +24,8 @@ block content
             +operationResponses(info[verb].responses)
 
     +operationMethods(info.methods)
+
+    p &nbsp;
 
     a(href='../index.html') Back
     
