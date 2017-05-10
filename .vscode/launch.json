@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceRoot}/index.js",
-            "args": ["http://petstore.swagger.io/v2/swagger.json", "-p", "./reference"]
+            "args": ["http://petstore.swagger.io/v2/swagger.json", "./reference", "~/github/swagger-seo-doc/templates"]
         },
         {
             "type": "node",

@@ -29,34 +29,43 @@ function findObjectsAndMethods(paths) {
   return objects;
 }
 
-function processSwagger(swagger, outpath) {
+function processSwagger(swagger, outPath, tempPath) {
   var objectsAndMethods = findObjectsAndMethods(swagger.paths);
-  fs.writeFileSync(outpath + '/index.html', pug.renderFile('templates/home.pug', { swagger: swagger, objects: objectsAndMethods }), () => { });
+  fs.writeFileSync(outPath + '/index.html', pug.renderFile(tempPath + '/home.pug', { swagger: swagger, objects: objectsAndMethods }), () => { });
   for (var key of Object.keys(objectsAndMethods)) {
-    mkdirp(outpath + path.sep + key);
-    fs.writeFileSync(outpath + path.sep + key + path.sep + 'index.html', pug.renderFile('templates/object.pug', { swagger: swagger, object: key, info: objectsAndMethods[key] }), () => {});
+    mkdirp(outPath + path.sep + key);
+    fs.writeFileSync(outPath + path.sep + key + path.sep + 'index.html', pug.renderFile(tempPath + '/object.pug', { swagger: swagger, object: key, info: objectsAndMethods[key] }), () => {});
     for (var method of Object.keys(objectsAndMethods[key].methods)) {
-      fs.writeFileSync(outpath + path.sep + key + path.sep + method + '.html', pug.renderFile('templates/method.pug', { swagger: swagger, parent: key, method: method, info: objectsAndMethods[key].methods[method] }), () => {});
+      fs.writeFileSync(outPath + path.sep + key + path.sep + method + '.html', pug.renderFile(tempPath + '/method.pug', { swagger: swagger, parent: key, method: method, info: objectsAndMethods[key].methods[method] }), () => {});
     }
-    mkdirp(outpath + path.sep + 'definitions');
+    mkdirp(outPath + path.sep + 'definitions');
     for (var definition in swagger.definitions) {
-      fs.writeFileSync(outpath + '/definitions/' + definition + '.html', pug.renderFile('templates/definition.pug', { swagger: swagger, definition: definition, info: swagger.definitions[definition] }), () => { });
+      fs.writeFileSync(outPath + '/definitions/' + definition + '.html', pug.renderFile(tempPath + '/definition.pug', { swagger: swagger, definition: definition, info: swagger.definitions[definition] }), () => { });
     }
   }
 }
 
 program
   .version('0.0.1')
-  .arguments('<swagger_url>')
-  .option('-p, --path <path>', 'Output path')
-  .action(function(swagger_url) {
-    console.log(program.path);
-    console.log(swagger_url);
-    request
-      .get(swagger_url)
-      .end(function (err, res) {
-        mkdirp(program.path);
-        processSwagger(res.body, program.path);
-      })
+  .arguments('<swagger_url> <output_path> <template_path>')
+  .action(function(swagger_url, output_path, template_path) {
+    console.log('URL: ', swagger_url);
+    console.log('Path: ', template_path);
+    if (swagger_url.startsWith('http')) {
+      request
+        .get(swagger_url)
+        .end(function (err, res) {
+          mkdirp(output_path);
+          processSwagger(res.body, output_path, template_path);
+        })
+    } else {
+      fs.readFile(swagger_url, function (err, data) {
+        if (err) {
+          throw err; 
+        }
+        mkdirp(output_path);
+        processSwagger(data.toJSON(), output_path, template_path);
+      });      
+    }
   })
   .parse(process.argv);
