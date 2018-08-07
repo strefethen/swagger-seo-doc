@@ -19,20 +19,36 @@ block masthead
         div(class="container")
             h1 #{swagger.info.title}
             p #{swagger.info.description}
-            p Version: #{swagger.info.version}
+           
+            a(href=swagger.externalDocs.url) #{swagger.externalDocs.description}
+            p
+            a(href='swagger/index.html') # Swagger
+
     div(style='clear: both')                
 
 block content
-    h1 API Objects
+    h2 Serviços
     div(class='item-wrapper')
         each item in Object.keys(objects)
             div(class='item')
                 a(href=item + '/index.html') #{item}
     p &nbsp;
     hr
-    h2 Type Definitions
+    h2 Entidades
     div(class='item-wrapper')
         each definition in Object.keys(swagger.definitions)
             div(class='item')
                 a(href='definitions/' + definition + '.html') #{definition}
+    
+    p &nbsp;
+    hr
+    h2 Detalhes do Servidor
+    div(class='item-wrapper')
+        p Version: #{swagger.info.version}
+        p Path: #{swagger.basePath} 
+        p Scheme: #{swagger.schemes} 
+        p Consume: #{swagger.consumes}
+        p Produce: #{swagger.produces}
+        p Contato: #{swagger.info.contact.name} #{swagger.info.contact.email}
+
     div(style='clear: both')

@@ -7,19 +7,24 @@ mixin operationHeader(verb, operation)
         dd #{operation.summary}
         dt Description
         dd #{operation.description}
+        dd Consumes: #{operation.consumes}
+        dd Produces: #{operation.produces}
 
 mixin operationParameters(parameters)
     if parameters
-        h4 Parameters
+        h4 Parâmetro
 
         table(class="table table-bordered")
             th Name
+            th Description
             th in
             th required
             th type
+            
             each item in parameters
                 tr
                     td #{item.name}
+                    td #{item.description}
                     td #{item.in}
                     td #{item.required}
                     td #{item.type}
@@ -44,7 +49,7 @@ mixin operationResponses(responses)
 
 mixin operationMethods(methods)
     if methods
-        h4 Methods
+        h4 Métodos
         div(class='item-wrapper')
             each verb in Object.keys(methods)
                 div(class='item')                         
@@ -53,7 +58,7 @@ mixin operationMethods(methods)
 
 mixin definitionProperties(properties)
     if properties
-        h4 Properties
+        h4 Propriedades
         table(class="table table-bordered")
             th Name
             th Type

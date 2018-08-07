@@ -1,8 +1,48 @@
 doctype html
 html
     head
+        title API do Framework Demoiselle
         meta(charset='utf-8')
-        block title
+        meta(name='description' content='API do Framework Demoiselle')
+        meta(name='keywords' content='JAVA,JEE7,HTML5,CSS,XML,JavaScript,AngularJS,Demoiselle,Framework,Geolocalização,Maps,Governo,SERPRO,GEO,Endereço,Geocoding')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='theme-color' content='#777777')
+        meta(name='Robots' content='index, follow')
+        meta(name='mobile-web-app-capable' content='yes')
+        meta(name='google-site-verification' content='8dY9WhsU4G3rTPibyv_tjSjFjs1KEUzmu_hemMN3CXw')
+        meta(name='author' content='PauloGladson')
+        link(rel='publisher' href='https://github.com/PauloGladson')
+        link(rel='text/plain' href='https://www.demoiselle.org/humans.txt')
+
+        meta(property='og:site_name' content='Framework Demoiselle')
+        meta(property='og:locale' content='pt_BR')
+        meta(property='og:type' content='website')
+        meta(property='og:title' content='Framework Demoiselle')
+        meta(property='og:description' content='Framework Demoiselle')
+        meta(property='og:url' content='https://www.demoiselle.org/')
+        meta(property='og:image' content='https://www.demoiselle.org/img/logo-header.png')
+        meta(property='og:image:width' content='200')
+        meta(property='og:image:height' content='200')
+        meta(property='fb:app_id' content='262144181025322')
+
+        meta(name='twitter:card' content='summary')
+        meta(name='twitter:creator' content='@fwkdemoiselle')
+        meta(name='twitter:site' content='https://www.demoiselle.org/')
+        meta(name='twitter:domain' content='serpro.gov.br')
+        meta(name='twitter:title' content='Framework Demoiselle')
+        meta(name='twitter:description' content='Framework Demoiselle')
+        meta(name='twitter:image' content='https://www.demoiselle.org/img/logo-header.png')
+
+        link(rel='icon' href='https://www.demoiselle.org/favicon.ico' type='image/x-icon')
+        link(rel='shortcut icon' href='https://www.demoiselle.org/favicon.ico' type='image/x-icon')
+
+        link(rel='apple-touch-icon' sizes='192x192' href='https://www.demoiselle.org/img/ios/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='512x512' href='https://www.demoiselle.org/img/android/android-launchericon-512-512.png')
+        link(rel='icon' type='image/png' sizes='192x192' href='https://www.demoiselle.org/img/android/android-icon-192x192.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='https://www.demoiselle.org/img/favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='96x96' href='https://www.demoiselle.org/img/favicon-96x96.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='https://www.demoiselle.org/img/favicon-16x16.png')
+
         block headstyle
         style.
             body {
@@ -13,31 +53,41 @@ html
                 text-align: center;
             }
     body
-        nav(class="navbar navbar-inverse navbar-fixed-top")
-            div(class="container")
-                div(class="navbar-header")
-                    button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
-                        span(class="sr-only") Toggle navigation
-                        span(class="icon-bar")
-                        span(class="icon-bar")
-                        span(class="icon-bar")
-                    a(class="navbar-brand" href="#") 
+        nav(class='navbar navbar-inverse navbar-fixed-top')
+            div(class='container')
+                div(class='navbar-header')
+                    button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar')
+                        span(class='sr-only') Toggle navigation
+                        span(class='icon-bar')
+                        span(class='icon-bar')
+                        span(class='icon-bar')
+                    a(class='navbar-brand' href='#')
                         block projectname
-                div(id="navbar" class="navbar-collapse collapse")
+                div(id='navbar' class='navbar-collapse collapse')
 
         block masthead
 
-        div(class="container")
+        div(class='container')
             block content
 
             hr
 
             footer
-                p 
-                    | &copy; 2017 VMware, Inc. &nbsp;
-                    a(href=swagger.info.license.url) License #{swagger.info.license.name}&nbsp;
+                p
+                    | &copy; 2017 VMware, Inc. &nbsp;&nbsp;
+                    a(href=swagger.info.license.url) License #{swagger.info.license.name}&nbsp;&nbsp;
                     a(href=swagger.info.termsOfService) Terms of Service
 
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
-        // link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous")
-        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+        // Se quiser trocar o tema https://bootswatch.com/3/
+        link(rel='stylesheet' href='https://bootswatch.com/3/cerulean/bootstrap.min.css' )
+        // link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
+
+
+        script(async src='https://www.googletagmanager.com/gtag/js?id=UA-33820437-4')
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-33820437-4')
+
