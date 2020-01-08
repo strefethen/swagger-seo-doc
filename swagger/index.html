@@ -1,0 +1,120 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Swagger UI do Projeto Demoiselle</title>
+        <meta name="description" content="Framework Demoiselle SERPRO">
+        <meta name="keywords" content="JAVA,JEE7,HTML5,CSS,XML,JavaScript,AngularJS,Demoiselle,Framework,Geolocalização,Maps,Governo,SERPRO,GEO,Endereço,Geocoding">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#777777" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="windows-web-app-capable" content="yes">
+        <meta name="web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google-site-verification" content="8dY9WhsU4G3rTPibyv_tjSjFjs1KEUzmu_hemMN3CXw" />
+        <meta name="Robots" content="index, follow">
+
+        <link rel="publisher" href="https://github.com/PauloGladson" />
+        <meta name="author" content="PauloGladson">
+        <link type="text/plain" rel="author" href="https://www.demoiselle.org/humans.txt" />
+
+        <!-- Open Graph -->
+        <meta property="og:site_name" content="Demoiselle" />
+        <meta property="og:type" content="SoftwareApplication" />
+        <meta property="og:title" content="Demoiselle" />
+        <meta property="og:description" content="Framework Demoiselle SERPRO" />
+        <meta property="og:url" content="https://www.demoiselle.org/" />
+        <meta property="og:image" content="https://www.demoiselle.org/img/logo-large.png" />
+        <meta property="article:published_time" content="2017-03-01" />
+        <meta property="article:modified_time" content="2017-07-29" />
+        <meta property="article:tag" content="Demoiselle" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@serpro">
+        <meta name="twitter:site" content="www.demoiselle.org">
+        <meta name="twitter:domain" content="www.demoiselle.org">
+        <meta name="twitter:title" content="Demoiselle">
+        <meta name="twitter:description" content="Framework Demoiselle SERPRO">
+        <meta property="og:image" content="https://www.demoiselle.org/img/logo-large.png">
+
+        <link rel="icon" href="https://www.demoiselle.org/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="https://www.demoiselle.org/favicon.ico" type="image/x-icon" />
+
+        <link rel="apple-touch-icon" sizes="192x192" href="https://www.demoiselle.org/img/ios/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="https://www.demoiselle.org/img/android/android-launchericon-512-512.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://www.demoiselle.org/img/android/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://www.demoiselle.org/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://www.demoiselle.org/img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://www.demoiselle.org/img/favicon-16x16.png">
+
+
+        <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
+
+        <style>
+            html
+            {
+                box-sizing: border-box;
+                overflow: -moz-scrollbars-vertical;
+                overflow-y: scroll;
+            }
+
+            *,
+            *:before,
+            *:after
+            {
+                box-sizing: inherit;
+            }
+
+            body
+            {
+                margin:0;
+                background: #fafafa;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="swagger-ui"></div>
+
+        <script src="./swagger-ui-bundle.js"></script>
+        <script src="./swagger-ui-standalone-preset.js"></script>
+        <script>
+            window.onload = function () {
+
+                // Build a system
+                const ui = SwaggerUIBundle({
+                    url: "/app/api/swagger.json",
+                    dom_id: '#swagger-ui',
+                    deepLinking: true,
+                    presets: [
+                        SwaggerUIBundle.presets.apis,
+                        SwaggerUIStandalonePreset
+                    ],
+                    plugins: [
+                        SwaggerUIBundle.plugins.DownloadUrl
+                    ],
+                    layout: "StandaloneLayout"
+                })
+
+                window.ui = ui
+            }
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33820437-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-33820437-4');
+        </script>
+
+    </body>
+</html>

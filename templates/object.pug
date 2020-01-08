@@ -8,7 +8,7 @@ block headstyle
         }
 
         .item {
-            width:200px;
+            width:400px;
             margin:4px;
             display: inline-block;
         }
@@ -16,7 +16,6 @@ block headstyle
 block content
     h1 #{object}
 
-    h3 Verbs
     each verb in Object.keys(info)
         if verb != 'methods'
             +operationHeader(verb, info[verb])
@@ -28,5 +27,5 @@ block content
 
     p &nbsp;
 
-    a(href='../index.html') Back
+    a(href='../index.html') Voltar
     

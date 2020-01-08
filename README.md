@@ -6,7 +6,8 @@ A tool to generate a proto-type, SEO friendly, static documentation site for a s
 
 Kudos to Atlassian blog post on [building node cli's](https://developer.atlassian.com/blog/2015/11/scripting-with-node/).
 
-    $ git clone https://github.com/strefethen/swagger-seo-doc.git
+    // Demoiselle Project - Ajustado para Projetos Demoiselle
+    $ git clone https://github.com/PauloGladson/swagger-seo-doc.git
     $ cd swagger-seo-doc
     $ npm install
     // Install the tool globally so it works as a normal CLI
@@ -14,6 +15,14 @@ Kudos to Atlassian blog post on [building node cli's](https://developer.atlassia
     // Link it so you can continue developing on it and the changes will be reflected in the global version
     $ npm link
     // Run it...
-    $ swagger-seo-doc http://petstore.swagger.io/v2/swagger.json -p ./reference
-    $ cd reference
-    $ open index.html
+    
+    // Copiar pasta swagger para o webapp do seu projeto
+    // Copiar pasta templates para o webapp do seu projeto
+
+    // Vá para a pasta {SeuProjeto}/src/main 
+
+    $ swagger-seo-doc http://localhost:8080/geo/api/swagger.json ./webapp ./webapp/templates
+
+    // Se quiser trocar o tema https://bootswatch.com/3/
+    
+    
